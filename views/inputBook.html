@@ -3,13 +3,23 @@
         <div class="jumbotron text-center">
             <h1>Add Item Below</h1>
         </div>
+
+        <div class="alert alert-danger" role="alert" ng-show="bookForm.$dirty && !bookForm.$valid">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Enter a valid book item!
+        </div>
+
+
+
+
         <form name="bookForm">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Book Item" ng-model="bookItem.itemName">
+                <input type="text" ng-pattern="/^[a-zA-Z]*$/" class="form-control" placeholder="Book Item" ng-model="bookItem.itemName">
             </div>
 
             <div class="form-group">
-                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="save()">
+                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="bookForm.$valid && save()">
                     <span class="glyphicon glyphicon-pushpin"></span>
                     Save
                 </button>
