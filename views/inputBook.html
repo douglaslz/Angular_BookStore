@@ -3,16 +3,16 @@
         <div class="jumbotron text-center">
             <h1>Add Item Below</h1>
         </div>
-        <form name="groceryForm">
+        <form name="bookForm">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Book Item">
+                <input type="text" class="form-control" placeholder="Book Item" ng-model="bookItem.itemName">
             </div>
 
             <div class="form-group">
-                <a href="#/" class="btn btn-success btn-lg btn-block">
+                <button type="button" class="btn btn-success btn-lg btn-block" ng-click="save()">
                     <span class="glyphicon glyphicon-pushpin"></span>
                     Save
-                </a>
+                </button>
             </div>
 
 
